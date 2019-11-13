@@ -29,10 +29,15 @@ class Recipe
         };
 
         $this->ingredients[] = array(
-            "$item" => ucwords($item),
-            "$amount" => $amount,
-            "$measure" => strtolower($measure),
+            "item" => ucwords($item),
+            "amount" => $amount,
+            "measure" => strtolower($measure),
         );
+    }
+
+    public function getIngredients()
+    {
+        return $this->ingredients;
     }
 
     public function displayRecipe()
@@ -50,18 +55,3 @@ class Recipe
         return $this->title;
     }
 }
-
-$recipe1 = new Recipe();
-$recipe1->source = " HAgama" . "\n";
-$recipe1->setTitle(" my first recipe");
-$recipe1->addIngredient("egg", 2, "oz");
-
-$recipe2 = new Recipe();
-$recipe2->source = " Luwi" . "\n";
-$recipe2->setTitle(" my second recipe");
-
-echo $recipe1->getTitle();
-echo $recipe1->displayRecipe();
-
-echo $recipe2->getTitle();
-echo $recipe2->displayRecipe();
