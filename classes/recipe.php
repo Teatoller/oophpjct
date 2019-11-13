@@ -19,19 +19,21 @@ class Recipe
     }
 
     public function getTitle()
-    {}
+    {
+        return $this->title;
+    }
 }
 
 $recipe1 = new Recipe();
-$recipe1->source = "HAgama" . "\n";
-$recipe1->setTitle("my first recipe");
+$recipe1->source = " HAgama" . "\n";
+$recipe1->setTitle(" my first recipe");
 
 $recipe2 = new Recipe();
-$recipe2->source = "Luwi" . "\n";
-$recipe2->setTitle("my second recipe");
+$recipe2->source = " Luwi" . "\n";
+$recipe2->setTitle(" my second recipe");
 
-echo $recipe1->title;
+echo $recipe1->getTitle();
 echo $recipe1->displayRecipe();
 
-echo $recipe2->title;
+echo $recipe2->getTitle();
 echo $recipe2->displayRecipe();
