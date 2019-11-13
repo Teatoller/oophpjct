@@ -6,7 +6,7 @@ class Recipe
     private $instructions = array();
     private $yield;
     private $tag = array();
-    private $source = "Treehouse";
+    private $source = "Luwi's Kitchen";
     private $measurements = array(
         "tsp",
         "tasp",
@@ -80,12 +80,7 @@ class Recipe
         return $this->source;
     }
 
-    public function displayRecipe()
-    {
-        return $this->title . " by " . $this->source;
-    }
-
-    public function setTitle($title)
+        public function setTitle($title)
     {
         $this->title = ucwords($title);
     }
