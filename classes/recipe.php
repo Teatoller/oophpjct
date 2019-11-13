@@ -1,7 +1,7 @@
 <?php
 class Recipe
 {
-    public $title;
+    private $title;
     public $ingredients = array();
     public $instructions = array();
     public $yield;
@@ -28,7 +28,10 @@ $recipe1->setTitle("my first recipe");
 
 $recipe2 = new Recipe();
 $recipe2->source = "Luwi" . "\n";
-$recipe2->title = "my second recipe";
+$recipe2->setTitle("my second recipe");
 
+echo $recipe1->title;
 echo $recipe1->displayRecipe();
+
+echo $recipe2->title;
 echo $recipe2->displayRecipe();
