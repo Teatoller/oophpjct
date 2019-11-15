@@ -27,7 +27,7 @@ class Render
         $output .= "\n\n";
         $output .= self::listIngredients($recipe->getIngredients());
         $output .= "\n";
-        $output .= implode("\n", $recipe->getInstructions());
+        $output .= implode("\n", $recipe->getInstruction());
         $output .= "\n";
         $output .= $recipe->getYield();
         return $output;

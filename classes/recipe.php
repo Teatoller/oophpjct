@@ -9,7 +9,7 @@ class Recipe
     private $source = "Luwi's Kitchen";
     private $measurements = array(
         "tsp",
-        "tasp",
+        "tbsp",
         "cup",
         "oz",
         "lb",
@@ -56,12 +56,12 @@ class Recipe
         return $this->ingredients;
     }
 
-    public function addInstructions($string)
+    public function addInstruction($string)
     {
         $this->instructions[] = $string;
     }
 
-    public function getInstructions()
+    public function getInstruction()
     {
         return $this->instructions;
     }
