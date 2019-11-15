@@ -19,6 +19,11 @@ class Recipe
         "gallon",
     );
 
+    public function __construct($title = null)
+    {
+        $this->setTitle($title);
+    }
+
     public function addIngredient($item, $amount = null, $measure = null)
     {
         if ($amount != null && !is_float($amount) && !is_int($amount)) {
@@ -80,9 +85,13 @@ class Recipe
         return $this->source;
     }
 
-        public function setTitle($title)
+    public function setTitle($title)
     {
-        $this->title = ucwords($title);
+        if (empty($title)) {
+            $this->title = null;
+        } else {
+            $this->title = ucwords($title);
+        }
     }
 
     public function getTitle()
