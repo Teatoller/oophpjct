@@ -24,6 +24,17 @@ class Recipe
         $this->setTitle($title);
     }
 
+    public function __toString()
+    {
+        $output = "You are calling a " . __CLASS__ . " object with the title \"";
+        $output .= $this->getTitle() . "\"";
+        $output .= "\n It is store in a " . basename(__FILE__) . " at " . __DIR__ . ".";
+        $output .= "\n This display is from line " . __LINE__ . " in method " . __METHOD__;
+        $output .= "\n The following methods are available for the objects of this class: \n";
+        $output .= implode("\n", get_class_methods(__CLASS__));
+        return $output;
+    }
+
     public function addIngredient($item, $amount = null, $measure = null)
     {
         if ($amount != null && !is_float($amount) && !is_int($amount)) {
