@@ -31,7 +31,7 @@ class RecipeCollection
 
     public function getRecipes()
     {
-        return $this -> recipes;
+        return $this->recipes;
     }
 
     public function getRecipeTitles()
@@ -52,9 +52,21 @@ class RecipeCollection
                 $taggedRecipes[] = $recipe;
             };
         }
-
         return $taggedRecipes;
     }
 
-    
+    public function getCombinedIngredients()
+    {
+        $ingredients = array();
+        foreach ($this->recipes as $recipe) {
+            foreach ($recipe->getIngredients() as $ing) {
+                $ingredients[$ing["item"]] = array(
+                    $ing["amount"],
+                    $ing["measure"],
+                );
+            }
+        }
+        return $ingredients;
+    }
+
 }
