@@ -64,9 +64,9 @@ class RecipeCollection
                 if (strpos($item, ",")) {
                     $item = strstr($item, ",", true);
                 }
-                if(substr($item, -1) == "s" && array_key_exists(rtrim($item, "s"), $ingredients)){
+                if (substr($item, -1) == "s" && array_key_exists(rtrim($item, "s"), $ingredients)) {
                     $item = rtrim($item, "s");
-                } else if(array_key_exists($item . "s" , $ingredients)) {
+                } else if (array_key_exists($item . "s", $ingredients)) {
                     $item .= "s";
                 }
                 $ingredients[$item] = array(
@@ -76,6 +76,11 @@ class RecipeCollection
             }
         }
         return $ingredients;
+    }
+
+    public function filterById($id)
+    {
+        return $this->recipes[$id];
     }
 
 }

@@ -31,11 +31,29 @@ foreach($cookbook->filterByTag("breakfast") as $recipe) {
     $breakfast->addRecipe($recipe);
 }
 
-echo "\n\nSHOPPING LIST\n\n";
-echo Render::listShopping($breakfast->getCombinedIngredients());
+// echo Render::listRecipes($cookbook->getRecipeTitles());
+
+// echo "\n\nSHOPPING LIST\n\n";
+// echo Render::listShopping($breakfast->getCombinedIngredients());
 
 // echo Render::listRecipes($breakfast->getRecipeTitles());
 
-
 // echo Render::listRecipes($cookbook->getRecipeTitles());
 // echo Render::displayRecipe($belgian_waffles);
+// echo Render::displayRecipe($cookbook->filterById(2));
+
+$week1 = new RecipeCollection("Meal Plan: Week 1");
+$week1->addRecipe($cookbook->filterById(2));
+$week1->addRecipe($cookbook->filterById(3));
+$week1->addRecipe($cookbook->filterById(6));
+$week1->addRecipe($cookbook->filterById(16));
+echo Render::listRecipes($week1->getRecipeTitles());
+
+echo "\n\nSHOPPING LIST\n\n";
+echo Render::listShopping($week1->getCombinedIngredients());
+
+
+
+
+
+
